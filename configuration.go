@@ -17,10 +17,10 @@ type Route struct {
 	LatMax        float32 `xml: "latMax,attr"`
 	LonMin        float32 `xml: "lonMin,attr"`
 	LonMax        float32 `xml: "lonMax,attr"`
-
-	Stops      []Stop
-	Directions []Direction
-	Paths      []Path
+	Stops         []Stop
+	Directions    []Direction
+	Paths         []Path
+	Messages      []Message
 }
 
 type Stop struct {
@@ -33,11 +33,13 @@ type Stop struct {
 }
 
 type Direction struct {
-	Tag      string `xml: "tag,attr"`
-	Title    string `xml: "title,attr"`
-	Name     string `xml: "name,attr"`
-	UseForUI bool   `xml: "useForUI,attr"`
-	Stops    []Stop
+	Tag            string `xml: "tag,attr"`
+	Title          string `xml: "title,attr"`
+	Name           string `xml: "name,attr"`
+	UseForUI       bool   `xml: "useForUI,attr"`
+	Stops          []Stop
+	PredictionList []Prediction
+	Predictions    Predictions
 }
 
 type Path struct {

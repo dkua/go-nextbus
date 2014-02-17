@@ -16,7 +16,7 @@ func setUp() *Error {
 
 func TestError(t *testing.T) {
 	e := setUp()
-	result := e.Error
+	result := e.Message
 	expected := "stopId=1052315 is not valid for agency=ttc"
 	if result != expected {
 		t.Errorf("Expected \"%v\" in Error tag got \"%v\" instead.", expected, result)
